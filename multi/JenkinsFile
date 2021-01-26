@@ -18,6 +18,13 @@
       }
     }
 
+    stage('Container 3') {
+      container('docker') {
+        sh """
+        echo $POD_CONTAINER
+        """
+      }
+    }
 
   }
 
