@@ -25,6 +25,9 @@
         echo $POD_CONTAINER
         docker version
         ls -l
+        cd jnlp-test/golang
+        docker build . -t test
+        docker images
         """
       }
     }
