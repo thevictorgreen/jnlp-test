@@ -1,7 +1,7 @@
 node('jenkins-slave') {
     
      stage('test pipeline') {
-        container('jenkins-slave') {
+        container('jnlp') {
           sh(script: """
               echo "hello"
               git clone https://github.com/thevictorgreen/jnlp-test.git
