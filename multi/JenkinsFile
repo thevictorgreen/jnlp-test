@@ -1,10 +1,11 @@
  
 
   node("multi-con") {
-    git url: 'https://github.com/thevictorgreen/jnlp-test.git'
+    //git url: 'https://github.com/thevictorgreen/jnlp-test.git'
     stage('Container 1') {
       container('jnlp') {
         sh """
+        git clone 'https://github.com/thevictorgreen/jnlp-test.git'
         echo $POD_CONTAINER
         """
       }
