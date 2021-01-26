@@ -24,7 +24,7 @@
         sh """
         echo $POD_CONTAINER
         docker version
-        la -l
+        ls -l
         """
       }
     }
