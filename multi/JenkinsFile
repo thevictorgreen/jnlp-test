@@ -22,6 +22,7 @@
       container('docker') {
         sh """
         echo $POD_CONTAINER
+        docker version
         """
       }
     }
