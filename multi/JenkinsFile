@@ -10,6 +10,14 @@
       }
     }
 
+    stage('Container 2') {
+      container('golang') {
+        sh """
+        echo $POD_CONTAINER
+        """
+      }
+    }
+
 
   }
 
