@@ -19,10 +19,12 @@
     }
 
     stage('Container 3') {
+      git url: 'https://github.com/thevictorgreen/jnlp-test.git'
       container('docker') {
         sh """
         echo $POD_CONTAINER
         docker version
+        la -l
         """
       }
     }
