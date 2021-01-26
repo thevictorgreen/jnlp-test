@@ -1,45 +1,15 @@
-/**
- * This pipeline describes a multi container job, running Maven and Golang builds
- */
-
-podTemplate(yaml: """
-apiVersion: v1
-kind: Pod
-spec:
-  containers:
-  - name: maven
-    image: maven:3.3.9-jdk-8-alpine
-    command:
-    - sleep
-    args:
-    - 9999999
-  - name: golang
-    image: golang:1.8.0
-    command:
-    - sleep
-    args:
-    - 9999999
-"""
-  ) {
+ 
 
   node("multi-con") {
-    stage('Build a Maven project') {
-      //git 'https://github.com/jenkinsci/kubernetes-plugin.git'
-      container('maven') {
+
+    stage('Container 1') {
+      container('jnlp') {
         sh """
         echo $POD_CONTAINER
         """
       }
     }
 
-    stage('Build a Golang project') {
-      //git url: 'https://github.com/terraform-providers/terraform-provider-aws.git'
-      container('golang') {
-        sh """
-        echo $POD_CONTAINER
-        """
-      }
-    }
 
   }
-}
+
